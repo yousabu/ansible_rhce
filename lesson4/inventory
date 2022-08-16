@@ -1,0 +1,14 @@
+node1
+node2
+
+[lamp]
+node1
+
+[file]
+node2
+
+[nodes:children]
+lamp
+file
+
+

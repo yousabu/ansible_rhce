@@ -1,0 +1,40 @@
+---
+- name: enable webserver
+  hosts: node1
+  tasks:
+    - name: install apache2 and firewalld
+      apt:
+        name:
+          - apache2
+          - firewalld
+        state: latest
+    - name: install welcome page
+      copy:
+        content: "hello world"
+        dest: /var/www/html/index.html
+    - name: start web services
+      service:
+        name: apache2
+        enabled: true
+        state: started
+    - name: start firewalld services
+      service:
+        name: firewalld
+        enabled: true
+        state: started
+    - name: open firewalld
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
+        immediate: yes
+
+- name: test webserver access
+  hosts: localhost
+  become: no
+  tasks:
+    - name: connect to the web server
+      uri:
+        url: http://node1
+        return_content: yes
+        status_code: 200
