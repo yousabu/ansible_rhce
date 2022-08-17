@@ -1,17 +1,34 @@
 ---
 - name: install custom facts
-  hosts: lamp
+  hosts: node1
   vars:
     remote_dir: /etc/ansible/facts.d
     facts_file: localfacts.fact
   tasks:
-    - name: create fact directory
+    - name: create fact dir
       file:
         state: directory
         recurse: yes
         path: "{{ remote_dir }}"
-    - name: install new facts
+    - name: install new fact
       copy:
         src: "{{ facts_file }}"
         dest: "{{ remote_dir }}"
+
+#---
+#- name: install custom facts
+#  hosts: lamp
+#  vars:
+#    remote_dir: /etc/ansible/facts.d
+#    facts_file: localfacts.fact
+#  tasks:
+#    - name: create fact directory
+#      file:
+#        state: directory
+#        recurse: yes
+#        path: "{{ remote_dir }}"
+#    - name: install new facts
+#      copy:
+#        src: "{{ facts_file }}"
+#        dest: "{{ remote_dir }}"
 
