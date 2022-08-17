@@ -1,6 +1,6 @@
 ---
 - name: configure web
-  hosts: lamb
+  hosts: node1
   tasks:
     - name: this is the {{ web_package }} package
       debug:
