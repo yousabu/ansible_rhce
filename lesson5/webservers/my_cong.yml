@@ -1,0 +1,9 @@
+---
+- name: configure web
+  hosts: lamb
+    - name: this is the {{ web_package }} package
+      debug:
+        msg: "Installing {{ web_package }}"
+    - name: "Starting {{ web_service }}"
+      debug:
+        msg: "Starting {{ web_service }}"
