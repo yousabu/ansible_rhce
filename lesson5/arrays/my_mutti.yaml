@@ -1,0 +1,13 @@
+---
+- name: show list array
+  hosts: node1
+  vars_files:
+    - vars/users-list
+  tasks:
+    - name: print array
+      debug:
+        msg: " User  {{ item.username }} has home {{ item.homedir }} and shell {{ item.shell }} "
+      loop: "{{ users }}"
+    - name: print the secound array
+      debug:
+        msg: the secound {{ users[1] }}

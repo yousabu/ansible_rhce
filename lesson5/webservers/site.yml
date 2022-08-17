@@ -7,4 +7,5 @@
         msg: "Installing {{ web_package }}"
     - name: this is the {{ web_service }} service
       debug:
-        msg: "Starting {{ web_service }}" 
+        msg: "Starting {{ web_service }}"
+
