@@ -18,7 +18,7 @@
   hosts: node1
   tasks:
     - name: install
-      yum:
+      apt:
         name: "{{ ansible_local.localfacts.localfacts.package }}"
     - name: start
       service:
