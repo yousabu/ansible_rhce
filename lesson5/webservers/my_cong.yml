@@ -1,6 +1,7 @@
 ---
 - name: configure web
   hosts: lamb
+  tasks:
     - name: this is the {{ web_package }} package
       debug:
         msg: "Installing {{ web_package }}"
