@@ -7,3 +7,4 @@
     - name: print dictionary values
       debug:
         msg: "User {{ users.linda.username }} has homedirectory {{ users.linda.homedir }} and shell {{ users.linda.shell }}"
+      loop: "{{ users }}"
