@@ -6,7 +6,7 @@
       register: passwd_contantd
     - debug:
         msg: echo "passwd contain user lisa"
-      when: passwd_contantd.stdout.find('youssef') != -1
+      when: passwd_contantd.stdout.find('koko') != -1
 
 
 
