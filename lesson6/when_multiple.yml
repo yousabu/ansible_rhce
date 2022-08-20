@@ -6,5 +6,5 @@
       name: nginx
       state: installed
     when: 
-      - ansible_distribution == "RedHat"
+      - ansible_distribution == "Ubuntu"
       - ansible_memfree_mb > 1512 
