@@ -4,11 +4,11 @@
     - name: setting up http
       block:
       - name: installing http
-        yum:
-          name: httpd
+        apt:
+          name: apache2
           state: present
       - name: restart httpd
         service:
-          name: httpd
+          name: apache2
           state: started
       when: ansible_distribution == "RedHat"
