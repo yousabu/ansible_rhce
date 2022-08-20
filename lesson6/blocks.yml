@@ -11,4 +11,4 @@
         service:
           name: apache2
           state: started
-      when: ansible_distribution == "RedHat"
+      when: ansible_distribution == "Ubuntu"
