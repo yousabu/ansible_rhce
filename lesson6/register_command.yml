@@ -9,7 +9,7 @@
       register: passwd_contantd
     - debug:
         msg: echo "passwd contain user {{ users }}"
-      when: passwd_contantd.stdout.find({{ users }}) != -1
+      when: passwd_contantd.stdout.find("{{ users }}") != -1
 
 
 
