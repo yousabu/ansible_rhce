@@ -8,8 +8,8 @@
     - shell: cat /etc/passwd
       register: passwd_contantd
     - debug:
-        msg: echo "passwd contain user {{ item }}"
-      when: passwd_contantd.stdout.find({{ item }}) != -1
+        msg: echo "passwd contain user {{ users }}"
+      when: passwd_contantd.stdout.find({{ users }}) != -1
 
 
 
