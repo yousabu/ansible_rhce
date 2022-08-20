@@ -1,16 +1,38 @@
 ---
 - name: when demo
-  hosts: all
+  hosts: node1
   vars:
     supported_distros:
-      - Ubuntu
+      - RedHat
       - CentOS
       - Fedora
   tasks:
-    - name: install RH family specific packages
-      yum:
+    - name: install RH family specfic package
+      apt:
         name: nginx
         state: present
-      when: ansible_distribution in supported_distros 
+      when: ansible_distribution in supported_distros
+
+
+
+
+
+
+
+
+#---
+#- name: when demo
+#  hosts: all
+#  vars:
+#    supported_distros:
+#      - Ubuntu
+#      - CentOS
+#      - Fedora
+#  tasks:
+#    - name: install RH family specific packages
+#      yum:
+#        name: nginx
+#        state: present
+#      when: ansible_distribution in supported_distros
 
 
