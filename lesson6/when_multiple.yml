@@ -4,7 +4,7 @@
   tasks:
   - package:
       name: nginx
-      state: installed
+      state: started
     when: 
       - ansible_distribution == "Ubuntu"
       - ansible_memfree_mb > 512
