@@ -1,13 +1,40 @@
 ---
-- name: restart sshd only if crond is running
-  hosts: all
+- name: restart sshd is crond is install
+  hosts: node1
   tasks:
-    - name: get the crond server status
+    - name: get the crond server state
       command: /usr/bin/systemctl is-active crond
       ignore_errors: yes
       register: result
-    - name: restart sshd based on crond status
+    - name: restart sshd based on crond
       service:
         name: sshd
         state: restarted
       when: result.rc == 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#---
+#- name: restart sshd only if crond is running
+#  hosts: all
+#  tasks:
+#    - name: get the crond server status
+#      command: /usr/bin/systemctl is-active crond
+#      ignore_errors: yes
+#      register: result
+#    - name: restart sshd based on crond status
+#      service:
+#        name: sshd
+#        state: restarted
+#      when: result.rc == 0
