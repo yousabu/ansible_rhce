@@ -1,12 +1,15 @@
 ---
 - name: test register
   hosts: all
+  vars:
+    users:
+      - youssef
   tasks:
     - shell: cat /etc/passwd
       register: passwd_contantd
     - debug:
-        msg: echo "passwd contain user lisa"
-      when: passwd_contantd.stdout.find('koko') != -1
+        msg: echo "passwd contain user {{ item }}"
+      when: passwd_contantd.stdout.find('{{ item }}') != -1
 
 
 
