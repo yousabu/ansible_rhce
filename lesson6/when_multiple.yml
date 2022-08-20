@@ -3,7 +3,7 @@
   hosts: all
   tasks:
   - package:
-      name: httpd
+      name: nginx
       state: installed
     when: 
       - ansible_distribution == "RedHat"
