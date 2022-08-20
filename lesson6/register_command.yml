@@ -3,7 +3,24 @@
   hosts: all
   tasks:
     - shell: cat /etc/passwd
-      register: passwd_contents
-    - debug: 
-        msg: echo "passwd contains user lisa"
-      when: passwd_contents.stdout.find('lisa') != -1
+      register: passwd_contantd
+    - debug:
+        msg: echo "passwd contain user lisa"
+      when: passwd_contantd.stdout.find('youssef') != -1
+
+
+
+
+
+
+
+
+#---
+#- name: test register
+#  hosts: all
+#  tasks:
+#    - shell: cat /etc/passwd
+#      register: passwd_contents
+#    - debug:
+#        msg: echo "passwd contains user lisa"
+#      when: passwd_contents.stdout.find('lisa') != -1
