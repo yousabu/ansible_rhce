@@ -1,23 +1,54 @@
 ---
-- name: set up web server
-  hosts: all
+- name: set up server
+  hosts: node1
   tasks:
-    - name: install httpd
-      yum: 
-        name: httpd
+    - name: setup apache2
+      apt:
+        name: apache2
         state: latest
-    - name: copy index.html
+    - name: copy index
       copy:
-        src: /tmp/index.html
-        dest: /var/www/html/index.html
+        src: /tmo/index.html
+        dest: /var/www/html/nothing.html
       notify:
         - restart_web
-    - name: copy nothing - intended to fail
-      copy: 
-        src: /tmp/nothing
+    - name: copy nothing - intendes to fail
+      copy:
+        src: /tmp/nothin
         dest: /var/www/html/nothing.html
   handlers:
     - name: restart_web
       service:
-        name: httpd
+        name: apache
         state: restarted
+
+
+
+
+
+
+
+
+#---
+#- name: set up web server
+#  hosts: all
+#  tasks:
+#    - name: install httpd
+#      yum:
+#        name: httpd
+#        state: latest
+#    - name: copy index.html
+#      copy:
+#        src: /tmp/index.html
+#        dest: /var/www/html/index.html
+#      notify:
+#        - restart_web
+#    - name: copy nothing - intended to fail
+#      copy:
+#        src: /tmp/nothing
+#        dest: /var/www/html/nothing.html
+#  handlers:
+#    - name: restart_web
+#      service:
+#        name: httpd
+#        state: restarted
