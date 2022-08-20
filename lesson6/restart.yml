@@ -3,7 +3,7 @@
   hosts: node1
   tasks:
     - name: get the crond server state
-      command: /usr/bin/systemctl is-active crond
+      command: /usr/bin/systemctl is-active cron
       ignore_errors: yes
       register: result
     - name: restart sshd based on crond
