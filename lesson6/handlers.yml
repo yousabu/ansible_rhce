@@ -1,6 +1,7 @@
 ---
 - name: set up server
   hosts: node1
+  force_handlers: True
   tasks:
     - name: setup apache2
       apt:
