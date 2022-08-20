@@ -6,6 +6,7 @@
       - RedHat
       - CentOS
       - Fedora
+      - Ubuntu
   tasks:
     - name: install RH family specfic package
       apt:
