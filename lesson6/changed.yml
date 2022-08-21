@@ -1,12 +1,33 @@
 ---
 - name: demonstrate changed status
-  hosts: all
+  hosts: node1
   tasks:
-  - name: check local time
-    command: date
-    register: command_result
-    changed_when: false
+    - name: check local time
+      command: date
+      register: command_result
+    - name: print local time
+      debug:
+        var: command_result.stdout
 
-  - name: print local time
-    debug:
-      var: command_result.stdout
+
+
+
+
+
+
+
+
+
+
+#---
+#- name: demonstrate changed status
+#  hosts: all
+#  tasks:
+#  - name: check local time
+#    command: date
+#    register: command_result
+#    changed_when: false
+#
+#  - name: print local time
+#    debug:
+#      var: command_result.stdout
