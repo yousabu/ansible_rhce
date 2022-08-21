@@ -4,7 +4,7 @@
   vars:
     database_packages:
       - mariadb-server
-      - python3-PyMySQL
+      - python3-pymysql
 
   tasks:
     - name: mariadb packages are install
