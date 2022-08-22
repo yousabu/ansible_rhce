@@ -3,7 +3,7 @@
   hosts: all
   tasks:
   - name: install required pacakges
-    yum:
+    apt:
       name: policycoreutils-python-utils
       state: present
   - name: set selinux context
