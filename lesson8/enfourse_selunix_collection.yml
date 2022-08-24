@@ -1,0 +1,10 @@
+---
+- name: set selinux to enforcing
+  hosts: localhost
+  gather_facts: no
+  become: true
+  tasks:
+    - name: set selunix to enforsing
+      ansible.posix.selinux:
+        policy: targeted
+        state: enforcing

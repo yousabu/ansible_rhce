@@ -1,7 +1,7 @@
 ---
 # handlers file for vhost
 
-- name: restart httpd
+- name: restart apache2
   service:
-    name: httpd
+    name: apache2
     state: restarted

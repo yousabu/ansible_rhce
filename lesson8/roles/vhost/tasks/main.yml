@@ -1,12 +1,12 @@
 ---
 # tasks file for vhost
 - name: install http
-  yum:
-    name: httpd
+  apt:
+    name: apache2
     state: latest
 - name: start and enable httpd
   service:
-    name: httpd
+    name: apache2
     state: started
     enabled: true
 - name: install vhost config file
@@ -17,5 +17,5 @@
     group: root
     mode: 0644
   notify:
-    - restart httpd
+    - restart apache2
 
