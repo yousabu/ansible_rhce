@@ -3,7 +3,7 @@
   hosts: node1
   pre_tasks:
     - name: update cache
-      yum:
+      apt:
         update_cache: yes
   roles:
     - motd
