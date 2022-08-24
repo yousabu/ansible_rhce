@@ -1,11 +1,34 @@
 ---
-- name: run a task before a role
-  hosts: all
+- name: run task before role
+  hosts: node1
   pre_tasks:
-    - name: update yum cache
+    - name: update cache
       yum:
         update_cache: yes
   roles:
     - motd
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+#---
+#- name: run a task before a role
+#  hosts: all
+#  pre_tasks:
+#    - name: update yum cache
+#      yum:
+#        update_cache: yes
+#  roles:
+#    - motd
+#
+#
