@@ -10,4 +10,4 @@
   - name: FIXME show a custom variable
     debug: 
       var: user
-      verbosity: 1
+      verbosity: 2
