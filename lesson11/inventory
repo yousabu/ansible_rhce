@@ -1,7 +1,1 @@
-ansible1.example.com
-ansible3.example.com
-
-[lamp]
-ansible2.example.com
-
-
+node1

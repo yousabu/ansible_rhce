@@ -16,7 +16,7 @@
         enabled: true
 
 
-- hosts: lamp
+- hosts: node1
   tasks:
     - name: include the variable file
       include_vars: lab-vars/allvars.yml

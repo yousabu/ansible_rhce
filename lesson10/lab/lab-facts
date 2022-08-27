@@ -2,10 +2,10 @@
 smb_package = smb
 ftp_package = vsftpd
 db_package = mariadb-server
-web_package = httpd
+web_package = apache2
 
 [services]
 smb_service = smb
 ftp_service = vsftpd
 db_service = mariadb
-web_service = httpd
+web_service = apache2
