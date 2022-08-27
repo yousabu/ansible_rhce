@@ -1,6 +1,6 @@
 ---
 - name: use debug to check package facts
-  hosts: ansible2.example.com
+  hosts: node1
   tasks:
     - name: get information about packages
       package_facts:
