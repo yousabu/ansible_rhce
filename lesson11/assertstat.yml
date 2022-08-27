@@ -1,6 +1,6 @@
 ---
 - name: sample of stat and assert
-  hosts: ansible2.example.com
+  hosts: node1
   tasks:
   - name: stat a directory
     stat:
