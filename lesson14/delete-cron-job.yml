@@ -1,6 +1,6 @@
 ---
 - name: remove a specific cron job
-  hosts: file
+  hosts: node1
   tasks:
     - name: remove cron job
       cron: 
