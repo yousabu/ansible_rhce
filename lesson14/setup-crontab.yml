@@ -1,6 +1,6 @@
 ---
 - name: setup cron job
-  hosts: file
+  hosts: node1
   tasks: 
     - name: run a cron job
       cron:
