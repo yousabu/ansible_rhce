@@ -1,6 +1,6 @@
 ---
 - name: run an at task
-  hosts: lamp
+  hosts: node1
   
   tasks:
     - name: create my at file
