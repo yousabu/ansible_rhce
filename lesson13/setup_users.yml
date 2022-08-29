@@ -1,6 +1,6 @@
 ---
 - name: create some users
-  hosts: file
+  hosts: node1
   vars_files:
     - vars/users
     - vars/groups
@@ -32,7 +32,7 @@
     notify: restart sshd
 
   handlers:
-  - name: restart sshd 
+  - name: restart sshd
     service:
       name: sshd
       state: restarted
