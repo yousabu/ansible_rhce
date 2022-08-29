@@ -8,3 +8,9 @@ users:
     groups: account
   - username: lucy
     groups: account
+  - username: mostafa
+    groups: account
+  - username: youssef
+    groups: account
+  - username: hima
+    groups: account
