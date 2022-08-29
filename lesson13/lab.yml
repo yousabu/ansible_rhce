@@ -9,7 +9,7 @@
     - name: add groups
       group:
         name: "{{ item.groupname }}"
-      loop: "{{ usergroups }}"
+      loop: "{{ groupname }}"
     - name: add users
       user:
         name: "{{ item.username }}"
